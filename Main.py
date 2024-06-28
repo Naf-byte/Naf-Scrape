@@ -102,16 +102,44 @@ st.markdown("""
         }
         .input-container {
             text-align: center;
+            margin-bottom: 20px;
         }
-        .input-box {
+        .input-container input {
             width: 100%;
             max-width: 500px;
             margin: auto;
+            border: 2px solid #31473A !important;
+            border-radius: 8px !important;
+            padding: 10px !important;
+            background-color: #EDF4F2 !important;
+            outline: none !important;
+            box-shadow: none !important; /* Remove shadow on focus */
         }
+
+        .input-container input:focus {
+            border: 2px solid #31473A !important;
+            box-shadow: none !important; /* Remove shadow on focus */
+            outline: none !important;
+        }
+
+        .input-container input:hover {
+            border: 2px solid #31473A !important;
+            box-shadow: none !important; /* Remove shadow on hover */
+        }
+
         .fetch-button {
             display: flex;
             justify-content: center;
             margin-top: 20px;
+        }
+        .fetch-button button {
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #FFFFFF;
+            color: #31473A;
+            cursor: pointer;
         }
         .download-buttons-container {
             display: flex;
@@ -120,14 +148,33 @@ st.markdown("""
             padding: 10px;
             margin-top: 30px;
         }
+        .download-buttons-container button {
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #FFFFFF;
+            color: #31473A;
+            cursor: pointer;
+        }
         body {
-            background-color: #EDF4F2; /* White background */
+            background-color: #EDF4F2;
         }
         .footer {
             margin-top: 40px;
             text-align: center;
             font-size: 0.9rem;
-            color: #EDF4F2;
+            color: #31473A;
+        }
+        .custom-table th {
+            background-color: #31473A;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px;
+        }
+        .custom-table td {
+            text-align: center;
+            padding: 10px;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -139,7 +186,7 @@ st.markdown("<div class='centered-subtitle'>Fetch and download comments from You
 
 # Input field for video IDs
 st.markdown("<div class='input-container'>", unsafe_allow_html=True)
-video_ids_input = st.text_input("Enter YouTube Video IDs (comma-separated)", "")
+video_ids_input = st.text_input("Enter YouTube Video IDs (comma-separated)", "", key="input_box", placeholder="e.g., dQw4w9WgXcQ, M7lc1UVf-VE", help="Separate multiple video IDs with commas")
 st.markdown("</div>", unsafe_allow_html=True)
 
 # Button to fetch comments
@@ -159,11 +206,16 @@ if st.button("Fetch Comments"):
 
         if all_comments:
             df = pd.DataFrame(all_comments, columns=[
-                'author', 'author_channel_id', 'author_profile_image',
-                'published_at', 'updated_at', 'like_count', 'total_reply_count',
-                'text', 'video_id', 'public'
+                'Author', 'Author Channel ID', 'Author Profile Image',
+                'Published At', 'Updated At', 'Like Count', 'Total Reply Count',
+                'Text', 'Video ID', 'Public'
             ])
-            st.dataframe(df)
+            st.dataframe(df.style.set_table_styles(
+                [{
+                    'selector': 'th',
+                    'props': [('background-color', '#31473A'), ('color', 'white')]
+                }]
+            ).set_properties(**{'text-align': 'center'}))
 
             # Save to Excel, CSV, and JSON and provide download links
             st.markdown("<div class='download-buttons-container'>", unsafe_allow_html=True)
@@ -204,6 +256,5 @@ if st.button("Fetch Comments"):
 
             st.markdown("</div>", unsafe_allow_html=True)
 
-#
 # Footer
 st.markdown("<div class='footer'>Powered by Naf-Byte (Nafay Ur Rehman)</div>", unsafe_allow_html=True)
