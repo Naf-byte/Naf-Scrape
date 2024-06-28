@@ -15,11 +15,11 @@ Stylish UI with themed components for a pleasant user experience.
 <strong>Usage:</strong>
 Input Video IDs: Enter one or more YouTube video IDs into the input field, separated by commas.
 
-Fetch Comments: Click the "Fetch Comments" button to retrieve comments from the specified videos.
+<strong>Fetch Comments:</strong> Click the "Fetch Comments" button to retrieve comments from the specified videos.
 
-Download: Choose from Excel, CSV, or JSON download options to save the fetched data locally.
+<strong>Download:</strong> Choose from Excel, CSV, or JSON download options to save the fetched data locally.
 
-Explore Data: View comments directly in the web app interface and analyze them using the downloaded files.
+<strong>Explore Data:</strong> View comments directly in the web app interface and analyze them using the downloaded files.
 
 <strong>Setup Instructions:</strong>
 
