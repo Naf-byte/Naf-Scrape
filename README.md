@@ -23,7 +23,7 @@ Explore Data: View comments directly in the web app interface and analyze them u
 
 <strong>Setup Instructions:</strong>
 
-. Ensure Python 3.x is installed.
-. Install required dependencies using pip install -r requirements.txt.
-. Obtain a YouTube Data API v3 key from Google Developer Console and replace DEVELOPER_KEY in app.py with your key.
-. Run the app using streamlit run app.py and open the provided localhost URL in your web browser.
+* Ensure Python 3.x is installed.
+* Install required dependencies using pip install -r requirements.txt.
+* Obtain a YouTube Data API v3 key from Google Developer Console and replace DEVELOPER_KEY in app.py with your key.
+* Run the app using streamlit run app.py and open the provided localhost URL in your web browser.
