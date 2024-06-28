@@ -5,7 +5,7 @@ import googleapiclient.errors
 import io
 
 # Replace 'dev' with your actual API key
-DEVELOPER_KEY = "YOUR_API_KEY"
+DEVELOPER_KEY = "AIzaSyAvLHNkmnhBsq4K2dHry56GF2EjieQYklM"
 
 api_service_name = "youtube"
 api_version = "v3"
