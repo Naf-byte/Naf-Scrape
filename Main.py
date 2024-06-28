@@ -82,6 +82,10 @@ def fetch_comments(video_id):
     return comments
 
 
+# Set favicon
+favicon_emoji = "🕸️"
+st.set_page_config(page_title="YouTube Comment Scraper", page_icon=favicon_emoji)
+
 # Streamlit app
 st.markdown("""
     <style>
