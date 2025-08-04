@@ -261,4 +261,4 @@ if st.button("Fetch Comments"):
             st.markdown("</div>", unsafe_allow_html=True)
 
 # Footer
-st.markdown("<div class='footer'>Powered by Naf-Byte (Nafay Ur Rehman)</div>", unsafe_allow_html=True)
+# st.markdown("<div class='footer'>Powered by Naf-Byte (Nafay Ur Rehman)</div>", unsafe_allow_html=True)
